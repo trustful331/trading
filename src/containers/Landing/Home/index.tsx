@@ -35,7 +35,7 @@ export default function Home() {
               <Link to="/register" className="rounded-full bg-mint px-5 py-3 text-sm font-semibold text-ink">
                 Open live account
               </Link>
-              <Link to="/platform" className="rounded-full border border-white/15 px-5 py-3 text-sm text-paper">
+              <Link to="/platform" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/15 px-5 py-3 text-sm text-paper">
                 Try demo terminal
               </Link>
             </div>

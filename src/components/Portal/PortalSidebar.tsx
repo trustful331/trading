@@ -67,6 +67,8 @@ export default function PortalSidebar({
               <NavLink
                 key={item.to}
                 to={item.to}
+                target={item.to === "/platform" ? "_blank" : undefined}
+                rel={item.to === "/platform" ? "noopener noreferrer" : undefined}
                 onClick={onClose}
                 className={({ isActive }) =>
                   cn(

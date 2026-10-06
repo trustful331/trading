@@ -20,7 +20,7 @@ export default function Dashboard() {
         <div className="flex gap-2">
           <Link to="/deposit" className="rounded-full bg-mint px-4 py-2 text-sm font-semibold text-ink">Deposit</Link>
           <Link to="/withdraw-funds" className="rounded-full border border-[var(--p-line)] px-4 py-2 text-sm">Withdraw</Link>
-          <Link to="/platform" className="rounded-full border border-[var(--p-line)] px-4 py-2 text-sm">Trade</Link>
+          <Link to="/platform" target="_blank" rel="noopener noreferrer" className="rounded-full border border-[var(--p-line)] px-4 py-2 text-sm">Trade</Link>
         </div>
       </div>
       <div className="rounded-2xl border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-gold">
