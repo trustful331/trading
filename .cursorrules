@@ -1,0 +1,27 @@
+# Prime Trade FX conventions
+
+Stack is Vite + React + TypeScript + Redux Toolkit + React Router + Tailwind v4.
+Do not introduce Next.js, Prisma, or a second state library unless the user asks.
+
+## Folders
+
+- `src/pages` — thin route files. They render one container.
+- `src/containers` — screen UI, grouped by Landing, Auth, Portal, Admin.
+- `src/components` — shared layout and UI (Marketing, Portal, Admin, Auth, `_common`).
+- `src/router` — `createBrowserRouter`, `AllRoutes`, public/private guards.
+- `src/store` — slices in `store/slices`, API-style thunks later in `store/actions`.
+- `src/data` — static design content until a backend exists.
+- `src/config` — brand and environment placeholder.
+
+## Code
+
+- TypeScript strict. No `any`.
+- Import aliases: `src`, `pages`, `containers`, `components`, `store`, `utils`.
+- Money on screen is formatted text. Do not use binary floats for amounts when real ledger code is added.
+- Mocks that look like trading must say Demo / simulated. Never fake a filled order.
+- Original branding only. Do not copy another broker's name, logo, or copy.
+- Keep the CFD risk warning visible on public pages.
+
+## Product phase
+
+Design is in place. Do not add database, auth, payments, or uploads until the user says to continue.

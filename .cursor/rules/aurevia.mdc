@@ -1,0 +1,14 @@
+---
+description: Aurevia React, Redux, and folder conventions
+alwaysApply: true
+---
+
+# Prime Trade FX
+
+Vite + React + TypeScript + Redux Toolkit + React Router + Tailwind. Do not switch this project to Next.js unless the user asks.
+
+- `src/pages` are thin. Screens live in `src/containers`. Shared UI lives in `src/components`.
+- Routes go through `src/router`. State goes through `src/store` slices.
+- Design data stays in `src/data` until a backend is requested.
+- No `any`. No copied broker brands. Trading mocks must be labelled Demo / simulated.
+- Do not add database, auth, or payments until the user says to continue past the design.
