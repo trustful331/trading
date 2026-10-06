@@ -1,4 +1,4 @@
-# Prime Trade FX conventions
+# Elite Trade FX conventions
 
 Stack is Vite + React + TypeScript + Redux Toolkit + React Router + Tailwind v4.
 Do not introduce Next.js, Prisma, or a second state library unless the user asks.

@@ -29,7 +29,7 @@ export default function Home() {
               <span className="block italic text-gold">held in focus.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-mist">
-              Prime Trade FX covers forex, metals, energies, indices, shares, commodities, and crypto CFDs. Commercial terms stay unpublished until they are confirmed.
+              Elite Trade FX covers forex, metals, energies, indices, shares, commodities, and crypto CFDs. Commercial terms stay unpublished until they are confirmed.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/register" className="rounded-full bg-mint px-5 py-3 text-sm font-semibold text-ink">

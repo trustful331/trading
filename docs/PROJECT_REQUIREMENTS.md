@@ -1,10 +1,10 @@
 # Requirements
 
-No project document pack was uploaded. This file is the working specification until those files arrive. The public site at primetradefx.com was used only for information architecture: asset classes, client areas, and the idea of a first-party platform. Its sentences, licence claims, and prices are not copied.
+No project document pack was uploaded. This file is the working specification until those files arrive. A public brokerage site was used only for information architecture: asset classes, client areas, and the idea of a first-party platform. Its sentences, licence claims, and prices are not copied.
 
 ## Product
 
-Prime Trade FX is a brokerage web application with four surfaces:
+Elite Trade FX is a brokerage web application with four surfaces:
 
 1. Public website
 2. Client portal

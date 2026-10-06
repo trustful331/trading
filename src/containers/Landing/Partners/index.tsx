@@ -11,7 +11,7 @@ export default function Partners() {
       />
       <section className="mx-auto grid max-w-6xl gap-4 px-4 py-10 sm:px-6 lg:grid-cols-3">
         {[
-          ["Referral link", "primetradefx.com/r/AMINA"],
+          ["Referral link", "elitetradefx.com/r/AMINA"],
           ["Referred clients", "18"],
           ["Sample commission", "$1,240.00"],
         ].map(([label, value]) => (

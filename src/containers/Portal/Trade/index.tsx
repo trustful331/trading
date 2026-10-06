@@ -36,8 +36,8 @@ export default function Trade() {
     <div className="flex h-screen flex-col overflow-hidden bg-[#0b1220] text-[#d7deea]">
       <header className="flex h-12 shrink-0 items-center gap-4 border-b border-white/10 px-3">
         <Link to="/dashboard" className="flex items-center gap-2 text-sm font-semibold tracking-wide">
-          <span className="grid h-7 w-7 place-items-center rounded bg-[#12304a] text-[11px] text-[#7dffe1]">PT</span>
-          PRIMETRADE
+          <span className="grid h-7 w-7 place-items-center rounded bg-[#12304a] text-[11px] text-[#7dffe1]">ET</span>
+          ELITETRADE
         </Link>
         <nav className="flex items-center gap-1 text-sm">
           {(

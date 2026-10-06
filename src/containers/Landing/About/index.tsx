@@ -6,7 +6,7 @@ export default function About() {
       <PageIntro
         kicker="About"
         title="A desk designed before the licence paperwork."
-        text="Prime Trade FX is this project's brokerage platform. Regulatory status is unpublished until official documents are added."
+        text="Elite Trade FX is this project's brokerage platform. Regulatory status is unpublished until official documents are added."
       />
       <section className="mx-auto grid max-w-6xl gap-4 px-4 py-10 sm:px-6 lg:grid-cols-3">
         {[

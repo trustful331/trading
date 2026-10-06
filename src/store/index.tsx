@@ -5,7 +5,7 @@ import UiSlice from "./slices/ui/index";
 
 const loadState = () => {
   try {
-    const serializedState = localStorage.getItem("primetrade_state");
+    const serializedState = localStorage.getItem("elitetrade_state");
     if (serializedState === null) return undefined;
     return JSON.parse(serializedState) as Record<string, unknown>;
   } catch {
@@ -24,7 +24,7 @@ export type RootState = ReturnType<typeof combinedReducers>;
 
 const rootReducer = (state: RootState | undefined, action: Action) => {
   if (action.type === "signout/logout") {
-    localStorage.removeItem("primetrade_state");
+    localStorage.removeItem("elitetrade_state");
     return combinedReducers(undefined, action);
   }
   return combinedReducers(state, action);
@@ -39,7 +39,7 @@ export const store = configureStore({
 
 const saveState = (state: RootState) => {
   try {
-    localStorage.setItem("primetrade_state", JSON.stringify(state));
+    localStorage.setItem("elitetrade_state", JSON.stringify(state));
   } catch {
     // ignore quota errors in design preview
   }

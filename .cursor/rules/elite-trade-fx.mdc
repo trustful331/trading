@@ -1,9 +1,9 @@
 ---
-description: Aurevia React, Redux, and folder conventions
+description: Elite Trade FX React, Redux, and folder conventions
 alwaysApply: true
 ---
 
-# Prime Trade FX
+# Elite Trade FX
 
 Vite + React + TypeScript + Redux Toolkit + React Router + Tailwind. Do not switch this project to Next.js unless the user asks.
 

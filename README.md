@@ -1,4 +1,4 @@
-# Prime Trade FX
+# Elite Trade FX
 
 Brokerage website, client portal, trading terminal, and admin desk.
 

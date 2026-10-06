@@ -54,7 +54,7 @@ export default function PortalSidebar({
         <div className="flex h-16 items-center justify-between px-5">
           <div>
             <p className="text-xs tracking-[0.22em] text-mint uppercase">Client desk</p>
-            <p className="font-semibold">Prime Trade FX</p>
+            <p className="font-semibold">Elite Trade FX</p>
           </div>
           <button className="lg:hidden" onClick={onClose} aria-label="Close">
             <X size={18} />

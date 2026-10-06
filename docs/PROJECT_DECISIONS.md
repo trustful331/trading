@@ -4,8 +4,8 @@
 |---|---|---|
 | Framework | Keep Vite + React + Redux + React Router. Do not migrate to Next.js | Locked by the existing project |
 | Folders | `pages` / `containers` / `components` / `router` / `store` | Locked |
-| Product name | Prime Trade FX | From this brief. Replaces the temporary Aurevia name |
-| Support email | support@primetradefx.com | Seen on the public reference site. Not in an uploaded doc |
+| Product name | Elite Trade FX | Current product name |
+| Support email | support@elitetradefx.com | Brand address for Elite Trade FX. Not a verified mailbox until the domain is live |
 | Regulator | None stated | Do not display a licence number |
 | Spreads and leverage | Unpublished | Do not present invented figures as official |
 | Account types | Silver, Gold, Platinum, Islamic in configuration | Commercial numbers empty |

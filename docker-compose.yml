@@ -2,13 +2,13 @@ services:
   postgres:
     image: postgres:16
     environment:
-      POSTGRES_USER: primetrade
-      POSTGRES_PASSWORD: primetrade
-      POSTGRES_DB: primetrade
+      POSTGRES_USER: elitetrade
+      POSTGRES_PASSWORD: elitetrade
+      POSTGRES_DB: elitetrade
     ports:
       - "5432:5432"
     volumes:
-      - primetrade_pg:/var/lib/postgresql/data
+      - elitetrade_pg:/var/lib/postgresql/data
 
 volumes:
-  primetrade_pg:
+  elitetrade_pg:

@@ -16,7 +16,7 @@ export default function AdminLayout() {
         <div className="flex h-16 items-center justify-between px-5">
           <div>
             <p className="text-xs tracking-[0.22em] text-gold uppercase">Back office</p>
-            <p className="font-semibold">Prime Trade FX</p>
+            <p className="font-semibold">Elite Trade FX</p>
           </div>
           <button className="lg:hidden" onClick={() => setOpen(false)} aria-label="Close">
             <X size={18} />

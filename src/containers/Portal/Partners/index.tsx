@@ -7,7 +7,7 @@ export default function PartnersPortal() {
       </div>
       <div className="rounded-3xl border border-[var(--p-line)] bg-[var(--p-card)] p-5">
         <p className="text-sm text-[var(--p-muted)]">Referral URL</p>
-        <p className="mt-2 text-xl">primetradefx.com/r/AMINA</p>
+        <p className="mt-2 text-xl">elitetradefx.com/r/AMINA</p>
       </div>
       <div className="grid gap-3 sm:grid-cols-3">
         {[
