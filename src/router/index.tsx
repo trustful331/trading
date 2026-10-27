@@ -40,12 +40,18 @@ function buildRoute(item: RouteConfig): RouteObject {
 
 const routeObjects: RouteObject[] = AllRoutes.map((item) => buildRoute(item));
 
-const router = createBrowserRouter([
-  {
-    element: <Layout />,
-    errorElement: <ErrorPage />,
-    children: routeObjects,
-  },
-]);
+const basename =
+  import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const router = createBrowserRouter(
+  [
+    {
+      element: <Layout />,
+      errorElement: <ErrorPage />,
+      children: routeObjects,
+    },
+  ],
+  { basename },
+);
 
 export default router;

@@ -24,4 +24,4 @@ Do not introduce Next.js, Prisma, or a second state library unless the user asks
 
 ## Product phase
 
-Design is in place. Do not add database, auth, payments, or uploads until the user says to continue.
+The React app stays at the repo root. Node and MongoDB start in `BE/`. Do not add Postgres. Keep the API package inside `BE/` so the frontend and backend can deploy separately. Deploys go through GitHub Actions, not Vercel.

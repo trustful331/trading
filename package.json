@@ -8,8 +8,6 @@
     "start": "vite preview",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "test": "node --experimental-strip-types --test test/money.test.ts test/payment.test.ts",
-    "dev:api": "node --experimental-strip-types server/index.ts",
     "typecheck": "tsc -b --pretty false",
     "preview": "vite preview"
   },

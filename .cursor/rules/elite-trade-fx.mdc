@@ -9,6 +9,7 @@ Vite + React + TypeScript + Redux Toolkit + React Router + Tailwind. Do not swit
 
 - `src/pages` are thin. Screens live in `src/containers`. Shared UI lives in `src/components`.
 - Routes go through `src/router`. State goes through `src/store` slices.
-- Design data stays in `src/data` until a backend is requested.
+- Design data stays in `src/data`.
 - No `any`. No copied broker brands. Trading mocks must be labelled Demo / simulated.
-- Do not add database, auth, or payments until the user says to continue past the design.
+- Node and MongoDB start in `BE/`. Do not add Postgres. Keep the API package inside `BE/`.
+- Deploys go through GitHub Actions, not Vercel.

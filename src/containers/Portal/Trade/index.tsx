@@ -2,8 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Minus, MousePointer2, Search, TrendingUp, Type } from "lucide-react";
 import PriceChart, { type ChartKind, type Ohlc } from "src/components/charts/PriceChart";
-import { mockMarketData } from "src/domain/providers/mock/marketData.ts";
-import type { Timeframe } from "src/domain/providers/types.ts";
+import { mockMarketData, type Timeframe } from "src/data/market.ts";
 
 const frames: Timeframe[] = ["1m", "5m", "15m", "30m", "1h", "4h", "1D", "1W", "1M"];
 

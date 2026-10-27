@@ -4,7 +4,7 @@ import { ArrowUpRight, ShieldCheck, Sparkles, Timer } from "lucide-react";
 import Ticker from "src/components/Marketing/Ticker";
 import { accounts, marketGroups } from "src/data/site";
 import { brand } from "src/config/brand";
-import { mockMarketData } from "src/domain/providers/mock/marketData.ts";
+import { mockMarketData } from "src/data/market.ts";
 
 const quotes = mockMarketData.getSymbols().slice(0, 4).map((symbol) => mockMarketData.getQuote(symbol));
 

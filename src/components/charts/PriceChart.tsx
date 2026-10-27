@@ -8,7 +8,7 @@ import {
   createChart,
 } from "lightweight-charts";
 import type { IChartApi, ISeriesApi, UTCTimestamp } from "lightweight-charts";
-import type { Bar } from "src/domain/providers/types.ts";
+import type { Bar } from "src/data/market.ts";
 
 export type ChartKind = "candles" | "line" | "area";
 

@@ -3,8 +3,10 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
+const base = process.env.VITE_BASE || "/";
+
 export default defineConfig({
-  base: "/",
+  base,
   resolve: {
     alias: {
       src: path.resolve(__dirname, "./src"),

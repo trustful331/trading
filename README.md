@@ -1,23 +1,23 @@
 # Elite Trade FX
 
-Brokerage website, client portal, trading terminal, and admin desk.
+React frontend at the repo root. Node and MongoDB will live in `BE/`.
 
-Vite + React + TypeScript + Redux Toolkit + React Router + Tailwind. The API is a separate Node process. Providers are mocked until real credentials exist.
-
-## Run
+## Run the site
 
 ```bash
 npm install
 npm run dev
-npm run dev:api
-npm test
 ```
 
-Site: http://127.0.0.1:5175  
-API: http://127.0.0.1:4000/api/health
+Site: http://127.0.0.1:5175
 
-Postgres: `docker compose up -d postgres`, then copy `.env.example` to `.env`.
+`BE/` is empty on purpose. Add the API there when the daily sessions start. Keep its `package.json` inside `BE/`, so the root app stays the frontend.
 
-## Read next
+## GitHub Actions
 
-`docs/ARCHITECTURE.md`, `docs/PROJECT_DECISIONS.md`, `docs/IMPLEMENTATION_PLAN.md`.
+- `.github/workflows/frontend.yml` checks the React app, then publishes `master` to GitHub Pages.
+- `.github/workflows/backend.yml` runs only when `BE/` changes. It waits until `BE/package.json` exists.
+
+A frontend-only push does not run the API job. An API-only push does not republish the site.
+
+The Pages site will be `https://<github-user>.github.io/<repo>/`. In the repo, open Settings, Pages, and set the source to GitHub Actions before the first deploy.

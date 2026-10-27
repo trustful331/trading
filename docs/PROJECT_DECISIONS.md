@@ -9,10 +9,10 @@
 | Regulator | None stated | Do not display a licence number |
 | Spreads and leverage | Unpublished | Do not present invented figures as official |
 | Account types | Silver, Gold, Platinum, Islamic in configuration | Commercial numbers empty |
-| Market data | Mock generator behind `MarketDataProvider` | Simulated, labelled in the UI |
-| Trading | Mock provider. MT5 stub throws | No live orders |
-| Payments | Webhook must match `PAYMENT_WEBHOOK_SECRET` | Browser success flags are not accepted |
-| Money math | Integer minor units, scale 8 | No float ledger |
+| Backend | Node and MongoDB in `BE/` | Folder is empty until daily sessions start |
+| Database | MongoDB | Postgres and Prisma removed |
+| Market data | Simulated quotes in `src/data/market.ts` | Labelled in the UI |
+| Deploys | GitHub Actions. Site to GitHub Pages, API from `BE/` | Vercel is not used |
 | Client URLs | `/dashboard`, `/deposit`, `/platform`, and the other portal paths at the root. `/portal/*` redirects | Matches the brief |
 | Uploaded docs | None in the repo | Re-read this file when they arrive |
 
