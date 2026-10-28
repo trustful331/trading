@@ -1,6 +1,10 @@
 import { instruments } from "src/data/site";
+import { useRecords } from "src/utils/api";
+
+type InstrumentRow = { id?: string; symbol?: string; spread: string; leverage: string };
 
 export default function ConditionsEditor() {
+  const rows = useRecords<InstrumentRow>("/api/instruments", instruments);
   return (
     <div className="space-y-4">
       <h1 className="font-serif text-4xl">Trading conditions</h1>
@@ -15,9 +19,9 @@ export default function ConditionsEditor() {
             </tr>
           </thead>
           <tbody>
-            {instruments.slice(0, 6).map((row) => (
-              <tr key={row.symbol} className="border-t border-black/5">
-                <td className="px-4 py-3">{row.symbol}</td>
+            {rows.slice(0, 6).map((row) => (
+              <tr key={row.symbol ?? row.id} className="border-t border-black/5">
+                <td className="px-4 py-3">{row.symbol ?? row.id}</td>
                 <td className="px-4 py-3"><input defaultValue={row.spread} className="w-24 rounded-xl border border-black/10 px-2 py-1" /></td>
                 <td className="px-4 py-3"><input defaultValue={row.leverage} className="w-24 rounded-xl border border-black/10 px-2 py-1" /></td>
               </tr>

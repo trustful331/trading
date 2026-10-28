@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import StatusPill from "src/components/_common/StatusPill";
 import { clients } from "src/data/site";
+import { useRecords } from "src/utils/api";
 
 export default function Users() {
+  const rows = useRecords("/api/clients", clients);
   return (
     <div className="space-y-4">
       <h1 className="font-serif text-4xl">Clients</h1>
@@ -16,7 +18,7 @@ export default function Users() {
             </tr>
           </thead>
           <tbody>
-            {clients.map((client) => (
+            {rows.map((client) => (
               <tr key={client.id} className="border-t border-black/5">
                 <td className="px-4 py-3">{client.id}</td>
                 <td className="px-4 py-3">
@@ -27,7 +29,7 @@ export default function Users() {
                 <td className="px-4 py-3"><StatusPill value={client.kyc} /></td>
                 <td className="px-4 py-3">{client.balance}</td>
                 <td className="px-4 py-3">
-                  <Link to="/admin/users/CL-2041" className="text-mint-2">View</Link>
+                  <Link to={`/admin/users/${client.id}`} className="text-mint-2">View</Link>
                 </td>
               </tr>
             ))}

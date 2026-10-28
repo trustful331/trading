@@ -1,8 +1,10 @@
 import StatusPill from "src/components/_common/StatusPill";
 import { moneyQueue } from "src/data/site";
+import { useRecords } from "src/utils/api";
 
 export function MoneyQueue({ kind }: { kind: "Deposit" | "Withdrawal" }) {
-  const rows = moneyQueue.filter((item) => (kind === "Deposit" ? item.id.startsWith("DP") : item.id.startsWith("WD")));
+  const queue = useRecords("/api/money", moneyQueue);
+  const rows = queue.filter((item) => (kind === "Deposit" ? item.id.startsWith("DP") : item.id.startsWith("WD")));
   return (
     <div className="space-y-4">
       <h1 className="font-serif text-4xl">{kind}s</h1>

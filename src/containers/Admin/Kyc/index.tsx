@@ -1,13 +1,15 @@
 import StatusPill from "src/components/_common/StatusPill";
 import { kycQueue } from "src/data/site";
+import { useRecords } from "src/utils/api";
 
 export default function Kyc() {
+  const rows = useRecords("/api/kyc", kycQueue);
   return (
     <div className="space-y-4">
       <h1 className="font-serif text-4xl">KYC queue</h1>
       <div className="grid gap-4 lg:grid-cols-[1fr_280px]">
         <div className="space-y-3">
-          {kycQueue.map((item) => (
+          {rows.map((item) => (
             <article key={item.id} className="flex flex-wrap items-center justify-between gap-3 rounded-3xl bg-white p-5">
               <div>
                 <p className="text-xs text-ink/40">{item.id} · {item.submitted}</p>

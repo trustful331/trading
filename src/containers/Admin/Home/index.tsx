@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { clients, kycQueue, moneyQueue } from "src/data/site";
+import { useRecords } from "src/utils/api";
 
 const cards = [
   ["New registrations", "24", "This week"],
@@ -9,6 +10,8 @@ const cards = [
 ];
 
 export default function AdminHome() {
+  const people = useRecords("/api/clients", clients);
+  const money = useRecords("/api/money", moneyQueue);
   return (
     <div className="space-y-5">
       <div>
@@ -31,7 +34,7 @@ export default function AdminHome() {
             <Link to="/admin/users" className="text-sm text-mint-2">Open list</Link>
           </div>
           <ul className="mt-4 divide-y divide-black/5">
-            {clients.map((client) => (
+            {people.map((client) => (
               <li key={client.id} className="flex items-center justify-between py-3 text-sm">
                 <span>{client.name}</span>
                 <span className="text-ink/50">{client.kyc}</span>
@@ -42,7 +45,7 @@ export default function AdminHome() {
         <section className="rounded-3xl bg-white p-5">
           <h2 className="font-serif text-2xl">Money waiting</h2>
           <ul className="mt-4 divide-y divide-black/5">
-            {moneyQueue.map((item) => (
+            {money.map((item) => (
               <li key={item.id} className="flex items-center justify-between py-3 text-sm">
                 <span>{item.id} · {item.client}</span>
                 <span>{item.amount}</span>

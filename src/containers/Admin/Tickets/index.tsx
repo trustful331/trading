@@ -1,12 +1,14 @@
 import StatusPill from "src/components/_common/StatusPill";
 import { tickets } from "src/data/site";
+import { useRecords } from "src/utils/api";
 
 export default function Tickets() {
+  const rows = useRecords("/api/tickets", tickets);
   return (
     <div className="space-y-4">
       <h1 className="font-serif text-4xl">Tickets</h1>
       <div className="grid gap-3">
-        {tickets.map((ticket) => (
+        {rows.map((ticket) => (
           <article key={ticket.id} className="flex items-center justify-between rounded-3xl bg-white px-5 py-4">
             <div>
               <p className="text-xs text-ink/40">{ticket.id} · {ticket.updated}</p>

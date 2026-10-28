@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import StatusPill from "src/components/_common/StatusPill";
 import { transactions } from "src/data/site";
+import { useRecords } from "src/utils/api";
 
 const stats = [
   ["Balance", "0.00 USD"],
@@ -9,7 +10,14 @@ const stats = [
   ["Free margin", "0.00 USD"],
 ];
 
+const notices = [
+  { id: "AN-1", title: "Swap-free request window", body: "Open until Friday. Sample notice." },
+  { id: "AN-2", title: "Platform maintenance", body: "Sunday 02:00–03:00. No live session." },
+];
+
 export default function Dashboard() {
+  const activity = useRecords("/api/transactions", transactions);
+  const announcements = useRecords("/api/announcements", notices);
   return (
     <div className="space-y-5">
       <div className="flex flex-wrap items-end justify-between gap-3">
@@ -47,14 +55,12 @@ export default function Dashboard() {
         <article className="rounded-3xl border border-[var(--p-line)] bg-[var(--p-card)] p-5">
           <h2 className="text-2xl">Announcements</h2>
           <ul className="mt-4 space-y-4 text-sm">
-            <li>
-              <p className="font-medium">Swap-free request window</p>
-              <p className="text-[var(--p-muted)]">Open until Friday. Sample notice.</p>
-            </li>
-            <li>
-              <p className="font-medium">Platform maintenance</p>
-              <p className="text-[var(--p-muted)]">Sunday 02:00–03:00. No live session.</p>
-            </li>
+            {announcements.map((item) => (
+              <li key={item.id}>
+                <p className="font-medium">{item.title}</p>
+                <p className="text-[var(--p-muted)]">{item.body}</p>
+              </li>
+            ))}
           </ul>
         </article>
       </div>
@@ -65,7 +71,7 @@ export default function Dashboard() {
         </div>
         <table className="w-full min-w-[640px] text-left text-sm">
           <tbody>
-            {transactions.slice(0, 4).map((row) => (
+            {activity.slice(0, 4).map((row) => (
               <tr key={row.id} className="border-t border-[var(--p-line)]">
                 <td className="px-5 py-3">{row.type}</td>
                 <td className="px-5 py-3 text-[var(--p-muted)]">{row.date}</td>

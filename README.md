@@ -11,7 +11,20 @@ npm run dev
 
 Site: http://127.0.0.1:5175
 
-`BE/` is empty on purpose. Add the API there when the daily sessions start. Keep its `package.json` inside `BE/`, so the root app stays the frontend.
+## Run the API
+
+```bash
+docker compose up -d
+cd BE
+npm install
+npm run dev
+```
+
+API: http://127.0.0.1:4000/api/health
+
+If Docker is not installed, `npm run dev` still starts a practice MongoDB and keeps the data in `BE/.mongo`.
+
+MongoDB stores clients, KYC, money requests, tickets, transactions, trading accounts, announcements, instruments, account types, and the audit log. Each collection has list, create, read, update, and delete under `/api/<name>`. The React app reads them in local dev. The GitHub Pages build keeps the sample data when `VITE_API_URL` is empty.
 
 ## GitHub Actions
 

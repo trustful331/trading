@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { tradingAccounts } from "src/data/site";
+import { useRecords } from "src/utils/api";
 
 const methods = ["Card", "Bank transfer", "Local transfer", "Crypto"];
 
 export default function Deposit() {
   const [method, setMethod] = useState("Card");
+  const accounts = useRecords("/api/trading-accounts", tradingAccounts.map((account) => ({ ...account, id: account.login })));
   return (
     <div className="mx-auto max-w-3xl space-y-5">
       <div>
@@ -14,8 +16,8 @@ export default function Deposit() {
       </div>
       <label className="block text-sm">Trading account
         <select className="mt-1 w-full rounded-2xl border border-[var(--p-line)] bg-[var(--p-card)] px-4 py-3">
-          {tradingAccounts.map((account) => (
-            <option key={account.login}>{account.login} · {account.type}</option>
+          {accounts.map((account) => (
+            <option key={account.id}>{account.id} · {account.type}</option>
           ))}
         </select>
       </label>

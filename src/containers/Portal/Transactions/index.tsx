@@ -1,18 +1,20 @@
 import { useMemo, useState } from "react";
 import StatusPill from "src/components/_common/StatusPill";
 import { transactions } from "src/data/site";
+import { useRecords } from "src/utils/api";
 
 export default function Transactions() {
   const [query, setQuery] = useState("");
   const [type, setType] = useState("All");
+  const loaded = useRecords("/api/transactions", transactions);
   const rows = useMemo(
     () =>
-      transactions.filter((row) => {
+      loaded.filter((row) => {
         const matchesType = type === "All" || row.type === type;
         const matchesQuery = `${row.id} ${row.type} ${row.account}`.toLowerCase().includes(query.toLowerCase());
         return matchesType && matchesQuery;
       }),
-    [query, type],
+    [loaded, query, type],
   );
 
   return (
